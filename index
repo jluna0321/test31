@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+                    <div class="form-group">
+                        <label>
+                            Select Recipient(s) 
+                            <!-- ko if: recipientsHelpText -->
+                            <small class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-bind="tooltip: { title: recipientsHelpText }"></small>
+                            <!-- /ko -->
+                        </label>
+                        <input type="hidden" class="select form-control" data-bind={"CustomSelect2": {
+    "optionsCaption": "Recipient(s)",
+    "optionsText": "Name",
+    "optionsValue": "IDGUID",
+    "routeParams": {
+        "recipientRoleIds": "recipientRoleIds",
+        "groupCreatorConfigurationId": "groupCreatorConfigurationId",
+        "getUsers": "true",
+        "getBusinessUnits": "true",
+        "widgetInstanceId": "widgetInstanceId"
+    },
+    "selectedOptions": "recipientIds",
+    "sourceUrl": "Search/GetAudience"
+}} />
+                    </div>
+
+</body>
+</html>
